@@ -1,0 +1,30 @@
+div.main {
+  margin-top: 130px;
+  text-align: center;
+  font-family: monospace;
+  color: #000;
+}
+
+span {
+  color: #444;
+  -webkit-transition:color 2.5s;
+  -ms-transition:color 2.5s;
+  -o-transition:color 2.5s;
+  transition:color 2.5s;
+}
+
+span:hover {
+  color: #FF0;
+  -webkit-transition:color .0s;
+  -ms-transition:color .0s;
+  -o-transition:color .0s;
+  transition:color .0s;
+}
+
+span.d {
+  color: #FF0;
+  -webkit-transition:color .0s;
+  -ms-transition:color .0s;
+  -o-transition:color .0s;
+  transition:color .0s;
+}
