@@ -25,9 +25,14 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        q = self.request.get('q', None)
-        if not q:
-            q = random.choice(xrange(14)) + 1
+        try:
+            q = int(self.request.get('q', None))
+        except ValueError, e:
+            q = random.randint(1,15)
+
+        if not 0 < q < 16:
+            q = random.randint(1,15)
+
         template = JINJA_ENVIRONMENT.get_template('templates/' + str(q) + '.html')
         #self.response.out.write('Bling!')
         self.response.write(template.render({}))
