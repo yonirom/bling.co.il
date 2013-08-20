@@ -27,11 +27,11 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         try:
             q = int(self.request.get('q', None))
-        except ValueError, e:
-            q = random.randint(1,15)
+        except (ValueError, TypeError) as e:
+            q = random.randint(1,8)
 
-        if not 0 < q < 16:
-            q = random.randint(1,15)
+        if not 0 < q < 9:
+            q = random.randint(1,8)
 
         template = JINJA_ENVIRONMENT.get_template('templates/' + str(q) + '.html')
         #self.response.out.write('Bling!')
