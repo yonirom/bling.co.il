@@ -1,1 +1,1 @@
-bling.co.il for appengine
+bling.co.il for github pages
